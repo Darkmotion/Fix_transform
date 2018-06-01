@@ -27,7 +27,7 @@ class PivotFixer:
 
     @staticmethod
     def pos_reset(obj):
-        if obj.GetType() == c4d.Onull:
+        if obj.GetType() != c4d.Opolygon:
             child = obj.GetChildren()
             if child:
                 childs_mg = [item.GetMg() for item in child]
@@ -54,7 +54,7 @@ class PivotFixer:
 
     @staticmethod
     def rot_reset(obj):
-        if obj.GetType() == c4d.Onull:
+        if obj.GetType() != c4d.Opolygon:
             child = obj.GetChildren()
             if child:
                 childs_mg = [item.GetMg() for item in child]
